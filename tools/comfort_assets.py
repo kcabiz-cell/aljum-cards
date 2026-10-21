@@ -249,9 +249,15 @@ def main():
         if os.path.exists(os.path.join(od, "meta.json")):
             continue
         os.makedirs(od, exist_ok=True)
-        pool = [k for k in range(len(lines)) if k not in used["lines"]] or list(range(len(lines)))
-        if len(pool) == len(lines):
+        def fits(k):
+            e = lines[k]; wd = d.weekday()
+            if e.get("d") == "mon" and wd != 0: return False
+            if e.get("d") == "we" and wd not in (5, 6): return False
+            return True
+        pool = [k for k in range(len(lines)) if k not in used["lines"] and fits(k)]
+        if not pool:
             used["lines"] = []
+            pool = [k for k in range(len(lines)) if fits(k)]
         li = pool[d.toordinal() % len(pool)]
         entry = lines[li]
         groups = [g.split("|") for g in entry["g"]]
@@ -263,7 +269,7 @@ def main():
         else:
             make_image(bg, groups, color, vrgb, od); files = ["01.jpg"]
         open(os.path.join(od, "caption.txt"), "w", encoding="utf-8").write(caption(entry, kind))
-        json.dump({"date": d.isoformat(), "type": kind, "files": files, "line_set": li, "background": meta},
+        json.dump({"date": d.isoformat(), "type": kind, "files": files, "line_set": li, "post_time": "21:30" if entry.get("t") == "pm" else "07:30", "background": meta},
                   open(os.path.join(od, "meta.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         used["lines"].append(li)
         if meta.get("id"):
