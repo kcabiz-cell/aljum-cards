@@ -126,14 +126,16 @@ def build(dt):
               f"내일은 {'·'.join(ANI[i] for i in other)}띠 차례예요."]
     first_comment = "\n".join(lines)
     names = "·".join(ANI[i] for i in group)
+    names = "·".join(ANI[i] for i in group)
+    tags = ("#오늘의운세 #띠별운세 #오늘의띠별운세 " + " ".join(f"#{ANI[i]}띠운세" for i in group) +
+            " #사주 #일일운세 #알아줌")
     caption = (f"🔮 오늘의 띠별 운세 ({dt.month}/{dt.day} {wd} · {ilgin_ko})\n"
                f"오늘은 {names}띠의 하루를 살펴봤어요.\n\n"
+               + "\n".join(lines[:-3]).rstrip() + "\n\n"
                "옆으로 넘기며 내 띠의 한마디를 확인해 보세요.\n"
                f"나머지 {'·'.join(ANI[i] for i in other)}띠는 내일 만나요 🙌\n\n"
-               "오늘 일진 이야기는 댓글에서 쉽게 풀어 드릴게요.\n"
-               "재미로 보는 운세예요. 선택과 판단은 언제나 나의 몫이에요.\n\n"
-               "#오늘의운세 #띠별운세 #오늘의띠별운세 " + " ".join(f"#{ANI[i]}띠운세" for i in group) +
-               " #사주 #일일운세 #알아줌")
+               "사주는 정해진 답이 아니라 하루를 가볍게 돌아보는 작은 힌트예요.\n"
+               "재미로 보는 운세예요. 선택과 판단은 언제나 나의 몫이에요.\n\n" + tags)
     for c in cards: c.pop("relation")
     return dict(date=dt.isoformat(), date_label=f"{dt.year}.{dt.month:02d}.{dt.day:02d} ({wd})",
                 ilgin=ilgin, ilgin_ko=ilgin_ko, today_title="오늘의 띠별 운세",
