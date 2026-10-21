@@ -1,0 +1,17 @@
+{
+ "date": "2026-11-02",
+ "type": "image",
+ "files": [
+  "01.jpg"
+ ],
+ "line_set": 15,
+ "post_time": "21:30",
+ "background": {
+  "id": 1392633,
+  "page": "https://pixabay.com/photos/zen-stones-pebble-1392633/",
+  "user": "MBertolotti",
+  "query": "calm blue sea beach",
+  "lum": 172,
+  "source": "pixabay"
+ }
+}
