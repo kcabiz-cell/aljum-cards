@@ -14,8 +14,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 W, H = 1080, 1920
 TYPE_BY_WEEKDAY = {0: "image", 2: "reel", 4: "image", 5: "reel", 6: "image"}  # Mon=0
-QUERIES = ["pastel sky clouds", "bright morning sunrise", "calm blue sea beach", "green forest sunlight", "pink sunset sky",
-           "soft clouds blue sky", "spring flowers meadow", "lake reflection morning light", "pastel galaxy nebula", "sunlight through trees"]
+QUERIES = ["bright blue sea beach", "calm turquoise ocean waves", "sunny green meadow", "bright morning sky clouds",
+           "spring flowers garden", "sunlit green forest leaves", "tropical beach white sand sea", "pastel sunrise sea",
+           "lake blue sky sunny mountains", "wildflowers field sunshine"]
 BAD_TAGS = {"woman", "man", "girl", "boy", "people", "person", "portrait", "child", "children", "face", "couple", "baby",
             "model", "men", "women", "lady", "bride", "groom", "hand", "hands", "fashion", "logo", "text", "sign", "advertising",
             "car", "city", "building", "street", "crowd", "tourist", "selfie"}
@@ -72,7 +73,7 @@ def pixabay_pick(key, query, used):
         data = requests.get(h["largeImageURL"], timeout=60).content
         img = Image.open(BytesIO(data)).convert("RGB")
         lum = float(np.asarray(img.convert("L").resize((64, 96)), np.float32).mean())
-        if 105 <= lum <= 225:
+        if 125 <= lum <= 225:
             return img, {"id": h["id"], "page": h["pageURL"], "user": h.get("user"), "query": query, "lum": round(lum)}
     return None
 
