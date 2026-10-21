@@ -14,8 +14,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 W, H = 1080, 1920
 TYPE_BY_WEEKDAY = {0: "image", 2: "reel", 4: "image", 5: "reel", 6: "image"}  # Mon=0
-QUERIES = ["sky clouds pastel", "sunrise mountains mist", "calm sea sunset", "green forest sunlight", "starry night sky",
-           "soft clouds sky", "meadow flowers field", "lake reflection morning", "milky way stars", "autumn leaves forest path"]
+QUERIES = ["pastel sky clouds", "bright morning sunrise", "calm blue sea beach", "green forest sunlight", "pink sunset sky",
+           "soft clouds blue sky", "spring flowers meadow", "lake reflection morning light", "pastel galaxy nebula", "sunlight through trees"]
 BAD_TAGS = {"woman", "man", "girl", "boy", "people", "person", "portrait", "child", "children", "face", "couple", "baby",
             "model", "men", "women", "lady", "bride", "groom", "hand", "hands", "fashion", "logo", "text", "sign", "advertising",
             "car", "city", "building", "street", "crowd", "tourist", "selfie"}
@@ -65,10 +65,16 @@ def pixabay_pick(key, query, used):
         ok.append(h)
     if not ok:
         return None
-    h = random.choice(ok[:30])
-    data = requests.get(h["largeImageURL"], timeout=60).content
     from io import BytesIO
-    return Image.open(BytesIO(data)).convert("RGB"), {"id": h["id"], "page": h["pageURL"], "user": h.get("user"), "query": query}
+    cands = ok[:30]
+    random.shuffle(cands)
+    for h in cands[:8]:  # 너무 어두운/너무 하얀 사진은 건너뜀 (따뜻하고 밝은 분위기 유지)
+        data = requests.get(h["largeImageURL"], timeout=60).content
+        img = Image.open(BytesIO(data)).convert("RGB")
+        lum = float(np.asarray(img.convert("L").resize((64, 96)), np.float32).mean())
+        if 105 <= lum <= 225:
+            return img, {"id": h["id"], "page": h["pageURL"], "user": h.get("user"), "query": query, "lum": round(lum)}
+    return None
 
 
 def get_background(date, outdir, used, no_net, seed):
@@ -105,6 +111,8 @@ def style_for(bg):
 
 def veil(bg, veil_rgb, strength=0.38):
     arr = np.asarray(bg.convert("RGB"), np.float32)
+    busy = float(np.asarray(bg.convert("L").resize((108, 192)), np.float32).std())
+    strength = strength + 0.22 * min(1.0, max(0.0, (busy - 35) / 40))  # 복잡한 사진일수록 막을 진하게
     h, w = arr.shape[:2]
     y = np.linspace(-1, 1, h)[:, None]
     band = np.exp(-(y / 0.55) ** 2)  # 가운데가 더 진하게
