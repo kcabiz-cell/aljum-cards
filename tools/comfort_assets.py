@@ -73,22 +73,26 @@ def pixabay_pick(key, query, used):
 
 def get_background(date, outdir, used, no_net, seed):
     key = os.environ.get("PIXABAY_API_KEY", "").strip()
+    reason = "no-net flag" if no_net else ("PIXABAY_API_KEY not set" if not key else "")
     if key and not no_net:
         for attempt in range(3):
             q = QUERIES[(date.toordinal() + attempt) % len(QUERIES)]
             try:
                 res = pixabay_pick(key, q, used)
+                if not res:
+                    reason = f"no usable photo for '{q}'"
                 if res:
                     img, meta = res
                     meta["source"] = "pixabay"
                     return cover(img, int(W * 1.12), int(H * 1.12)), meta
             except Exception as e:  # 네트워크/한도 문제는 폴백
-                print("pixabay error:", e, file=sys.stderr)
+                reason = f"{type(e).__name__}: {str(e)[:160]}".replace(key, "***")
+                print("pixabay error:", reason, file=sys.stderr)
     import scenes
     names = ["sky", "sunset_sea", "mountains", "forest", "moon", "space"]
     name = names[date.toordinal() % len(names)]
     img, _ = scenes.scene(name, int(W * 1.12), int(H * 1.12), seed=seed)
-    return img, {"source": "procedural", "scene": name}
+    return img, {"source": "procedural", "scene": name, "fallback_reason": reason}
 
 
 def style_for(bg):
