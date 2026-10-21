@@ -1,0 +1,15 @@
+{
+ "date": "2026-10-30",
+ "type": "image",
+ "files": [
+  "01.jpg"
+ ],
+ "line_set": 29,
+ "background": {
+  "id": 8357201,
+  "page": "https://pixabay.com/photos/path-leaves-forest-fall-autumnal-8357201/",
+  "user": "Leonhard_Niederwimmer",
+  "query": "autumn leaves forest path",
+  "source": "pixabay"
+ }
+}
