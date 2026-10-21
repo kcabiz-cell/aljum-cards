@@ -1,0 +1,13 @@
+{
+ "date": "2026-11-01",
+ "type": "image",
+ "files": [
+  "01.jpg"
+ ],
+ "line_set": 22,
+ "background": {
+  "source": "procedural",
+  "scene": "sunset_sea",
+  "fallback_reason": "PIXABAY_API_KEY not set"
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "date": "2026-10-31",
+ "type": "reel",
+ "files": [
+  "reel.mp4"
+ ],
+ "line_set": 14,
+ "background": {
+  "source": "procedural",
+  "scene": "sky",
+  "fallback_reason": "PIXABAY_API_KEY not set"
+ }
+}
