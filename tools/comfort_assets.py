@@ -4,7 +4,7 @@
 - 문구: tools/comfort_lines.json (해요체, 위로·다독임)
 - 음악: 직접 합성(저작권 없음) → 릴스에 삽입
 사용: python3 comfort_assets.py [--start YYYY-MM-DD] [--days 7] [--out comfort] [--no-net] [--force-type reel|image]
-요일 규칙(KST): 월·금·일=이미지, 수·토=릴스, 화·목=띠별 카드(별도 파이프라인이므로 건너뜀)
+요일 규칙(KST): 월·수·금·토=릴스, 일=이미지, 화·목=띠별 카드(별도 파이프라인이므로 건너뜀)
 """
 import os, sys, json, glob, random, subprocess, wave, argparse, datetime as dt, re
 import numpy as np
@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 W, H = 1080, 1920
-TYPE_BY_WEEKDAY = {0: "image", 2: "reel", 4: "image", 5: "reel", 6: "image"}  # Mon=0
+TYPE_BY_WEEKDAY = {0: "reel", 2: "reel", 4: "reel", 5: "reel", 6: "image"}  # Mon=0 (릴스 주 4회: 월·수·금·토)
 QUERIES = ["bright blue sea beach", "calm turquoise ocean waves", "sunny green meadow", "bright morning sky clouds",
            "spring flowers garden", "sunlit green forest leaves", "tropical beach white sand sea", "pastel sunrise sea",
            "lake blue sky sunny mountains", "wildflowers field sunshine"]
@@ -224,9 +224,9 @@ def make_image(bg, groups, color, vrgb, outdir):
 
 def caption(entry, kind):
     tail = "소리를 켜고 보면 더 좋아요 🎧\n" if kind == "reel" else ""
-    return (f"{entry['cap']}\n\n{tail}마음에 남는 한마디가 있다면 저장해 두고, 힘이 필요할 때 꺼내 보세요 🤍\n"
-            "알아줌은 오늘도 따뜻한 한마디를 건네요.\n\n"
-            "#오늘의한마디 #위로 #따뜻한말 #마음챙김 #힐링 #글귀 #알아줌 #arajum_saju")
+    return (f"{entry['cap']}\n\n{tail}💌 마음에 닿는 한마디가 있다면 저장해 두고, 힘이 필요한 친구에게 보내 주세요.\n"
+            "🤍 팔로우하면 매일 따뜻한 한마디를 받아볼 수 있어요.\n\n"
+            "#오늘의한마디 #위로 #따뜻한말 #마음챙김 #힐링 #글귀 #위로글귀 #좋은글귀 #감성글귀 #힘이되는말 #알아줌 #arajum_saju")
 
 
 def main():
