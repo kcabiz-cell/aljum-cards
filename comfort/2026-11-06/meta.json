@@ -1,0 +1,17 @@
+{
+ "date": "2026-11-06",
+ "type": "reel",
+ "files": [
+  "reel.mp4"
+ ],
+ "line_set": 8,
+ "post_time": "07:30",
+ "background": {
+  "id": 2343268,
+  "page": "https://pixabay.com/photos/beach-sandals-summer-vacation-2343268/",
+  "user": "jmesquitaau",
+  "query": "tropical beach white sand sea",
+  "lum": 180,
+  "source": "pixabay"
+ }
+}
