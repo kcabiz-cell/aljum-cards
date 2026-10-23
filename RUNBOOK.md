@@ -21,6 +21,11 @@
 8. 캡션에는 저장·공유·팔로우 안내 한 줄과 검색용 해시태그가 이미 들어 있다(gen_content.py, comfort_assets.py). 그대로 쓴다.
 9. 문구 규칙은 위 톤 원칙과 동일. `comfort_lines.json`에서 요일·시간대에 안 맞는 문구가 나오면(d: mon/we, t: am/pm 태그) 태그를 고친다.
 
+## 보너스 릴스 (저녁 21:30, 예약 여유 건수만큼만)
+- 계절 자연 사진(Pixabay) + 위로·용기 문구·명언(`tools/bonus_lines.json`)으로 `comfort/YYYY-MM-DD-b/`에 생성. 실행: Actions `comfort-assets`의 `bonus` 입력에 날짜(쉼표 구분) 입력.
+- 업로드: reel.mp4 raw URL, instagram {type:"reel", shouldShareToFeed:true}, dueAt = 해당 날짜 21:30(+09:00). 예약 총합 10건 한도 확인.
+- 명언은 출처가 확실한 공유 저작물·속담만 쓰고, 출처를 화면에 표기한다.
+
 ## 메모
 - Pixabay API 키: 저장소 Settings의 Variables 또는 Secrets에 `PIXABAY_API_KEY`. (Secrets 권장, 워크플로우는 둘 다 읽음)
 - 배경 규칙: 밝은 자연·바다·하늘·꽃 (`QUERIES`), 너무 어두운 사진은 자동 제외. 음악은 직접 합성(저작권 없음).
