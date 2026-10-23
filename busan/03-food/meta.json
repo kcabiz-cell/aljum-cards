@@ -1,0 +1,23 @@
+{
+ "slug": "03-food",
+ "date": "2026-10-30",
+ "time": "12:30",
+ "images": 6,
+ "photos": [
+  {
+   "id": 1971125,
+   "user": "omansang",
+   "page": "https://pixabay.com/photos/market-market-introduction-oden-1971125/"
+  },
+  {
+   "id": 4409811,
+   "user": "fan4tian2",
+   "page": "https://pixabay.com/photos/korean-food-korea-cooking-delicious-4409811/"
+  },
+  {
+   "id": 836806,
+   "user": "Jungyeon",
+   "page": "https://pixabay.com/photos/food-bone-haejangguk-gamjatang-836806/"
+  }
+ ]
+}

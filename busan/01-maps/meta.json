@@ -1,0 +1,23 @@
+{
+ "slug": "01-maps",
+ "date": "2026-10-25",
+ "time": "20:30",
+ "images": 5,
+ "photos": [
+  {
+   "id": 7241479,
+   "user": "ah64dka52",
+   "page": "https://pixabay.com/photos/busan-night-evening-city-urban-7241479/"
+  },
+  {
+   "id": 1747130,
+   "user": "algrin25",
+   "page": "https://pixabay.com/photos/busan-night-scene-bridge-busan-1747130/"
+  },
+  {
+   "id": 4664873,
+   "user": "naryogomes",
+   "page": "https://pixabay.com/photos/water-city-tourism-summer-sunset-4664873/"
+  }
+ ]
+}
