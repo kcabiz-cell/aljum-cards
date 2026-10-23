@@ -1,0 +1,30 @@
+name: busan-assets
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "cands(사진 후보) 또는 build(카드 생성)"
+        required: true
+        default: "cands"
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: |
+          sudo apt-get update -y && sudo apt-get install -y fonts-noto-cjk
+          pip install pillow requests
+      - name: Run
+        env:
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY || vars.PIXABAY_API_KEY }}
+        run: python3 tools/busan_assets.py "${{ github.event.inputs.mode }}"
+      - name: Commit
+        run: |
+          git config user.name "aljum-bot"; git config user.email "aljum-bot@users.noreply.github.com"
+          git add busan
+          git diff --cached --quiet || (git commit -m "wow_pusan assets (${{ github.event.inputs.mode }})" && git pull --rebase -q && git push)

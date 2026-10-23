@@ -1,0 +1,450 @@
+[
+ {
+  "slug": "01-maps",
+  "date": "2026-10-25",
+  "time": "20:30",
+  "q": [
+   "busan skyline",
+   "busan city night",
+   "busan harbor"
+  ],
+  "cover": {
+   "t": "Busan Survival Kit #1",
+   "k": "부산 여행 필수: 지도 앱",
+   "s": "Maps that actually work in Korea"
+  },
+  "cards": [
+   {
+    "h": "Google Maps is limited in Korea",
+    "lines": [
+     "Transit directions work.",
+     "Walking & driving directions are limited.",
+     "Don't rely on it for the last mile."
+    ]
+   },
+   {
+    "h": "Use Naver Map or Kakao Map",
+    "lines": [
+     "Both have an English mode.",
+     "Search in Korean for best results.",
+     "Screenshot the Korean name of your destination."
+    ]
+   },
+   {
+    "h": "Handy extras",
+    "lines": [
+     "Show the Korean name to your taxi driver.",
+     "Free public Wi-Fi: airports, subway & train stations (sign up at wififree.kr)."
+    ]
+   }
+  ],
+  "en": "Google Maps works for transit in Korea, but walking and driving directions are limited. Install Naver Map or Kakao Map and save the Korean name of every place you plan to visit. Busan Survival Kit #1 🗺️",
+  "kr": "구글맵은 한국에서 대중교통 안내는 되지만 도보·운전 길찾기는 제한적이에요. 네이버지도나 카카오맵을 설치하고, 가려는 곳의 한글 이름을 저장해 두세요. 부산 여행 필수 팁 #1 🗺️",
+  "tags": "#BusanTravel #Busan #부산여행 #부산 #KoreaTravel #TravelTips #NaverMap #부산관광 #wow_pusan"
+ },
+ {
+  "slug": "02-gamcheon",
+  "date": "2026-10-28",
+  "time": "19:30",
+  "q": [
+   "gamcheon culture village",
+   "gamcheon busan",
+   "busan colorful village"
+  ],
+  "cover": {
+   "t": "Gamcheon Culture Village",
+   "k": "감천문화마을",
+   "s": "Busan's colorful hillside village"
+  },
+  "cards": [
+   {
+    "h": "What to expect",
+    "lines": [
+     "A hillside village of colorful stepped houses in Saha-gu.",
+     "Free to enter.",
+     "Open 09:00–18:00 (Mar–Oct), 09:00–17:00 (Nov–Feb)."
+    ]
+   },
+   {
+    "h": "How to get there",
+    "route": true,
+    "lines": [
+     "Subway Line 1 → Toseong Station, Exit 6",
+     "Walk ~140 m to the bus stop",
+     "Village bus Saha 1 or Saha 1-1 (10–15 min)",
+     "Get off at Gamcheon Culture Village stop",
+     "Bus numbers can change — check Naver Map."
+    ]
+   },
+   {
+    "h": "Address & tips",
+    "lines": [
+     "203 Gamnae 2-ro, Saha-gu",
+     "부산 사하구 감내2로 203",
+     "Stamp book 2,000 won (optional).",
+     "Wear comfy shoes — lots of stairs. People live here, so please keep it quiet."
+    ]
+   }
+  ],
+  "en": "Gamcheon Culture Village is a hillside village of colorful stepped houses in Busan. Entry is free. Swipe for the subway + village bus route from Toseong Station 🌈",
+  "kr": "감천문화마을은 알록달록한 계단식 집들이 모여 있는 부산의 대표 언덕 마을이에요. 입장은 무료예요. 토성역에서 마을버스로 가는 길을 넘겨서 확인해 보세요 🌈",
+  "tags": "#GamcheonCultureVillage #감천문화마을 #Busan #부산여행 #BusanTravel #부산명소 #KoreaTravel #HiddenBusan #wow_pusan"
+ },
+ {
+  "slug": "03-food",
+  "date": "2026-10-30",
+  "time": "12:30",
+  "q": [
+   "korean street food",
+   "korean pork soup",
+   "korean fish cake"
+  ],
+  "cover": {
+   "t": "Busan Food 101",
+   "k": "부산 대표 로컬 음식",
+   "s": "4 dishes to try first"
+  },
+  "cards": [
+   {
+    "h": "Dwaeji-gukbap 돼지국밥",
+    "lines": [
+     "Pork & rice soup, a Busan classic.",
+     "Season it yourself with salted shrimp, chives and sauce.",
+     "Find it: Seomyeon area (Subway Line 1/2, Seomyeon Stn)"
+    ]
+   },
+   {
+    "h": "Milmyeon 밀면",
+    "lines": [
+     "Chewy wheat noodles in a cold, sweet-spicy broth.",
+     "Said to have spread among Korean War refugees.",
+     "A favorite in summer, loved all year."
+    ]
+   },
+   {
+    "h": "Ssiat-hotteok 씨앗호떡",
+    "lines": [
+     "Sweet pancake stuffed with seeds & nuts.",
+     "A street-stall favorite.",
+     "Find it: Gukje Market / BIFF Square (Subway Line 1, Nampo Stn)"
+    ]
+   },
+   {
+    "h": "Eomuk 어묵",
+    "lines": [
+     "Busan is famous for its fish cake.",
+     "Shops in Nampo-dong, Bujeon-dong and Daeyeon-dong.",
+     "Hot, cheap and easy to grab on the go."
+    ]
+   }
+  ],
+  "en": "Four Busan dishes to try first: pork & rice soup, cold wheat noodles, seed-stuffed sweet pancakes and fish cake. Swipe for where to find them 🍜 (Prices vary — check on site.)",
+  "kr": "부산에서 꼭 먹어 볼 음식 네 가지예요. 돼지국밥, 밀면, 씨앗호떡, 어묵! 어디서 먹을 수 있는지 넘겨서 확인해 보세요 🍜 (가격은 매장마다 달라요)",
+  "tags": "#BusanFood #부산맛집 #돼지국밥 #밀면 #씨앗호떡 #부산어묵 #KoreanFood #Busan #부산여행 #wow_pusan"
+ },
+ {
+  "slug": "04-giants",
+  "date": "2026-11-01",
+  "time": "20:30",
+  "q": [
+   "baseball stadium",
+   "baseball fans cheering",
+   "baseball field"
+  ],
+  "cover": {
+   "t": "Lotte Giants: Offseason Update",
+   "k": "롯데 자이언츠 소식",
+   "s": "Plus how to catch a game at Sajik"
+  },
+  "cards": [
+   {
+    "h": "2026 season recap",
+    "lines": [
+     "Finished 7th: 64 wins, 77 losses, 3 ties (144 games).",
+     "Missed the postseason.",
+     "Fall training began Oct 19 at Sajik Stadium."
+    ]
+   },
+   {
+    "h": "What's next",
+    "lines": [
+     "Japan (Miyazaki) camp reported to start Nov 4.",
+     "2027 schedule: not announced yet.",
+     "(The 2026 schedule was released in Dec 2025.)"
+    ]
+   },
+   {
+    "h": "Catching a game at Sajik",
+    "route": true,
+    "lines": [
+     "Sajik Baseball Stadium, Dongnae-gu (24,500 seats)",
+     "Busan Subway Line 3 — Sajik area",
+     "Check the exact exit on Naver Map.",
+     "Tickets go on sale ~1 week before a game.",
+     "Book on the team site, Ticketlink Global or NOL World."
+    ]
+   },
+   {
+    "h": "Game-day vibe",
+    "lines": [
+     "Each player has his own cheer song.",
+     "Stand up and sing along in the cheering sections.",
+     "Hear \"Busan Galmaegi\" (부산 갈매기), the Giants' signature song."
+    ]
+   }
+  ],
+  "en": "Lotte Giants finished 7th in 2026 (64-77-3) and missed the postseason. The 2027 schedule isn't out yet, but here's how to plan a visit to Sajik Stadium ⚾",
+  "kr": "롯데 자이언츠는 2026시즌 64승 77패 3무, 7위로 마쳤어요. 2027시즌 일정은 아직 발표 전이에요. 사직야구장 방문 팁을 넘겨서 확인해 보세요 ⚾",
+  "tags": "#LotteGiants #롯데자이언츠 #KBO #사직야구장 #BusanBaseball #부산야구 #Busan #부산여행 #wow_pusan"
+ },
+ {
+  "slug": "05-yonggungsa",
+  "date": "2026-11-04",
+  "time": "19:30",
+  "q": [
+   "haedong yonggungsa",
+   "korean temple sea",
+   "busan temple ocean"
+  ],
+  "cover": {
+   "t": "Haedong Yonggungsa",
+   "k": "해동용궁사",
+   "s": "The temple on the sea"
+  },
+  "cards": [
+   {
+    "h": "Good to know",
+    "lines": [
+     "A seaside temple in Gijang-gun.",
+     "Open daily 05:00–19:30.",
+     "Free entry (parking is paid).",
+     "Go early for fewer crowds."
+    ]
+   },
+   {
+    "h": "How to get there",
+    "route": true,
+    "lines": [
+     "Subway Line 2 → Haeundae Station, Exit 7",
+     "Bus stop ~20 m from the exit",
+     "Bus 181 or 1001 (~27 min) or 100 (~32 min)",
+     "Get off at Yonggungsa, walk ~12 min",
+     "From Osiria Stn (Donghae Line) Exit 1: bus 1001 or 139 (~4 min)"
+    ]
+   },
+   {
+    "h": "Address",
+    "lines": [
+     "86 Yonggung-gil, Gijang-eup, Gijang-gun",
+     "부산 기장군 기장읍 용궁길 86",
+     "Bus numbers can change — check Naver Map."
+    ]
+   }
+  ],
+  "en": "Haedong Yonggungsa is a rare temple right on the coast. Open 05:00–19:30, free entry. Swipe for the bus route from Haeundae Station 🌊",
+  "kr": "해동용궁사는 바다 바로 옆에 자리한 사찰이에요. 매일 05:00~19:30 열고 입장은 무료예요. 해운대역에서 가는 버스 길을 넘겨서 확인해 보세요 🌊",
+  "tags": "#HaedongYonggungsa #해동용궁사 #Busan #부산여행 #BusanTravel #부산명소 #KoreaTravel #Temple #wow_pusan"
+ },
+ {
+  "slug": "06-facts",
+  "date": "2026-11-06",
+  "time": "12:30",
+  "q": [
+   "busan harbor",
+   "busan port night",
+   "busan cityscape"
+  ],
+  "cover": {
+   "t": "Fun Facts About Busan",
+   "k": "재미난 부산 이야기",
+   "s": "5 stories behind the city"
+  },
+  "cards": [
+   {
+    "h": "Where does the name come from?",
+    "lines": [
+     "Busan (釜山) is said to come from a mountain shaped like a cauldron (釜).",
+     "It's a traditional account, so \"said to\" is the key phrase!"
+    ]
+   },
+   {
+    "h": "Korea's capital for 1,023 days",
+    "lines": [
+     "During the Korean War, Busan served as the temporary capital.",
+     "Sites like the Provisional Capital Memorial Hall tell that story."
+    ]
+   },
+   {
+    "h": "UN Memorial Cemetery",
+    "lines": [
+     "Billed as the world's only UN cemetery.",
+     "Soldiers from 11 countries rest here."
+    ]
+   },
+   {
+    "h": "BIFF since 1996",
+    "lines": [
+     "Busan International Film Festival began in 1996.",
+     "Korea's first international film festival."
+    ]
+   },
+   {
+    "h": "Busan Galmaegi 부산 갈매기",
+    "lines": [
+     "A 1982 song that became the Lotte Giants' fan anthem.",
+     "Back as an official cheer song on April 7, 2023."
+    ]
+   }
+  ],
+  "en": "Five stories behind Busan: a cauldron-shaped mountain, a capital for 1,023 days, a UN cemetery, BIFF and a song that belongs to the fans 🎬",
+  "kr": "부산 이름의 유래(가마솥 모양 산이라고 전해져요), 1,023일의 임시수도, 유엔기념공원, 부산국제영화제, 그리고 팬들의 노래 '부산 갈매기'까지, 부산 이야기 다섯 가지예요 🎬",
+  "tags": "#BusanFacts #부산이야기 #Busan #부산여행 #BIFF #부산국제영화제 #KoreaHistory #BusanTravel #wow_pusan"
+ },
+ {
+  "slug": "07-gwangalli",
+  "date": "2026-11-08",
+  "time": "20:30",
+  "q": [
+   "gwangalli beach",
+   "gwangan bridge night",
+   "gwangandaegyo"
+  ],
+  "cover": {
+   "t": "Gwangalli Beach & Gwangan Bridge",
+   "k": "광안리 · 광안대교 야경",
+   "s": "Busan's classic night view"
+  },
+  "cards": [
+   {
+    "h": "Why go in the evening",
+    "lines": [
+     "The beach faces the lit-up Gwangan Bridge.",
+     "Free to enter.",
+     "A relaxed walk along the beach road after dinner."
+    ]
+   },
+   {
+    "h": "How to get there",
+    "route": true,
+    "lines": [
+     "Subway Line 2 → Gwangan Station",
+     "Use Exit 3 or Exit 5",
+     "Walk to the beach (about 10 minutes)",
+     "Check the walking route on Naver Map."
+    ]
+   },
+   {
+    "h": "Address",
+    "lines": [
+     "219 Gwangan-haebyeon-ro, Suyeong-gu",
+     "부산 수영구 광안해변로 219",
+     "Parking is paid."
+    ]
+   }
+  ],
+  "en": "Gwangalli Beach is one of Busan's best evening spots, with the Gwangan Bridge lit up across the bay. Subway Line 2, Gwangan Station, Exit 3 or 5 🌉",
+  "kr": "광안리해수욕장은 광안대교 야경을 볼 수 있는 부산의 대표 저녁 명소예요. 지하철 2호선 광안역 3번 또는 5번 출구로 가세요 🌉",
+  "tags": "#Gwangalli #광안리 #광안대교 #Busan #부산여행 #BusanNight #BusanTravel #부산야경 #wow_pusan"
+ },
+ {
+  "slug": "08-jagalchi",
+  "date": "2026-11-11",
+  "time": "19:30",
+  "q": [
+   "jagalchi market",
+   "busan fish market",
+   "fish market korea"
+  ],
+  "cover": {
+   "t": "Jagalchi Market",
+   "k": "자갈치시장",
+   "s": "Korea's largest seafood market"
+  },
+  "cards": [
+   {
+    "h": "How it works",
+    "lines": [
+     "Pick fresh seafood on the 1st floor.",
+     "Have it prepared and eat on the 2nd floor.",
+     "Ask the price before you order."
+    ]
+   },
+   {
+    "h": "Hours",
+    "lines": [
+     "Daily 05:00–22:00.",
+     "Closed: Lunar New Year, Chuseok, and the 2nd & 4th Tuesday of each month.",
+     "Check for changes before you go."
+    ]
+   },
+   {
+    "h": "How to get there",
+    "route": true,
+    "lines": [
+     "Subway Line 1 → Jagalchi Station, Exit 10",
+     "Cross the street to the left (in front of Hanaro Mart)",
+     "Walk straight to the market",
+     "Address: 4-37 Nampo-dong 1-ga, Jung-gu",
+     "부산 중구 남포동1가 4-37"
+    ]
+   }
+  ],
+  "en": "Jagalchi is Korea's largest seafood market. Choose your seafood on the 1st floor and eat it upstairs. Subway Line 1, Jagalchi Station, Exit 10 🐟",
+  "kr": "자갈치시장은 국내 최대 수산시장이에요. 1층에서 고르고 2층에서 먹는 방식이에요. 지하철 1호선 자갈치역 10번 출구로 가세요 🐟",
+  "tags": "#Jagalchi #자갈치시장 #Busan #부산맛집 #부산여행 #BusanFood #Seafood #BusanTravel #wow_pusan"
+ },
+ {
+  "slug": "09-transport",
+  "date": "2026-11-13",
+  "time": "12:30",
+  "q": [
+   "busan subway",
+   "busan train station",
+   "busan street"
+  ],
+  "cover": {
+   "t": "Busan Survival Kit #2",
+   "k": "교통카드 · 공항에서 시내까지",
+   "s": "Subway, T-money & taxi tips"
+  },
+  "cards": [
+   {
+    "h": "T-money card",
+    "lines": [
+     "Foreign-issued cards don't work at subway gates.",
+     "Buy a T-money card at GS25, CU or 7-Eleven (3,000–5,000 won).",
+     "Recharge at subway-station machines (max 500,000 won)."
+    ]
+   },
+   {
+    "h": "Transfer discount",
+    "lines": [
+     "In Busan, T-money works for bus-subway transfers.",
+     "Up to 2 transfers within 30 minutes get the discount.",
+     "Airport limousine buses don't get it."
+    ]
+   },
+   {
+    "h": "Gimhae Airport → city",
+    "route": true,
+    "lines": [
+     "Airport → Busan–Gimhae Light Rail → Sasang Stn → Line 2",
+     "Seomyeon ~30 min",
+     "Gwangalli ~50 min",
+     "Haeundae ~70 min",
+     "Airport limousine: buy a ticket first (no cash/transit card on board)"
+    ]
+   },
+   {
+    "h": "Taxi app for visitors",
+    "lines": [
+     "Foreign cards often fail on Kakao T.",
+     "Try k.ride, made for visitors, and register your overseas card."
+    ]
+   }
+  ],
+  "en": "Busan Survival Kit #2: T-money, transfer discounts, the light-rail + Line 2 route from Gimhae Airport, and a taxi app for visitors 🚇",
+  "kr": "부산 여행 필수 팁 #2예요. 티머니 카드, 환승 할인, 김해공항에서 경전철+2호선으로 시내 가는 길, 외국인용 택시 앱 k.ride까지 정리했어요 🚇",
+  "tags": "#BusanTravel #Busan #Tmoney #부산여행 #GimhaeAirport #김해공항 #KoreaTravel #TravelTips #wow_pusan"
+ }
+]
