@@ -78,18 +78,18 @@ def make_card(photo, card, n, total):
     d = ImageDraw.Draw(base)
     accent = (255, 190, 120) if card.get("route") else (140, 220, 235)
     if card.get("route"):
-        d.rounded_rectangle((60, 90, 330, 142), 24, fill=accent); d.text((82, 98), "HOW TO GET THERE", font=font(True, 26), fill=(30, 30, 40))
+        cf = font(True, 26); cw = int(d.textlength("HOW TO GET THERE", font=cf)); d.rounded_rectangle((60, 90, 60 + cw + 48, 142), 24, fill=accent); d.text((84, 99), "HOW TO GET THERE", font=cf, fill=(30, 30, 40))
     y = 200
     y = draw_block(d, 60, y, W - 120, card["h"], True, 68, accent, 1.2)
     y += 36
     for i, ln in enumerate(card["lines"]):
-        size = 42
+        size = 48
         pre = f"{i + 1}.  " if card.get("route") and len(card["lines"]) > 2 and i < len(card["lines"]) - 1 else "•  "
-        f = font(False, size); lines = wrap(d, ln, f, W - 120 - 70)
+        f = font(False, size); lines = wrap(d, ln, f, W - 120 - 80)
         d.text((60, y), pre.strip(), font=font(True, size), fill=accent)
         for l in lines:
-            d.text((130, y), l, font=f, fill=(255, 255, 255)); y += int(size * 1.4)
-        y += 26
+            d.text((140, y), l, font=f, fill=(255, 255, 255)); y += int(size * 1.4)
+        y += 30
     footer(d, n, total); return base.convert("RGB")
 
 def make_cta(total, title="Save this for your Busan trip"):
