@@ -78,12 +78,29 @@ def pixabay_pick(key, query, used):
     return None
 
 
-def get_background(date, outdir, used, no_net, seed):
+SEASON_QUERIES = {
+    (9, 10, 11): ["autumn forest golden leaves", "golden ginkgo leaves path", "autumn lake reflection calm", "misty mountain morning sunlight",
+                  "golden field sunset autumn", "late autumn trees warm light", "frosty morning meadow sunrise"],
+    (12, 1, 2): ["snowy forest soft light", "winter sunrise frost field", "calm snow mountain blue sky", "winter lake misty morning"],
+    (3, 4, 5): ["spring cherry blossom branch", "fresh green leaves sunlight", "spring meadow flowers", "blue sky spring clouds"],
+    (6, 7, 8): ["bright blue sea beach", "summer green forest sunlight", "sunflower field blue sky", "calm turquoise ocean waves"],
+}
+
+
+def season_queries(d):
+    for months, qs in SEASON_QUERIES.items():
+        if d.month in months:
+            return qs
+    return QUERIES
+
+
+def get_background(date, outdir, used, no_net, seed, queries=None):
+    queries = queries or QUERIES
     key = os.environ.get("PIXABAY_API_KEY", "").strip()
     reason = "no-net flag" if no_net else ("PIXABAY_API_KEY not set" if not key else "")
     if key and not no_net:
         for attempt in range(3):
-            q = QUERIES[(date.toordinal() + attempt) % len(QUERIES)]
+            q = queries[(date.toordinal() + attempt) % len(queries)]
             try:
                 res = pixabay_pick(key, q, used)
                 if not res:
@@ -229,12 +246,44 @@ def caption(entry, kind):
             "#오늘의한마디 #위로 #따뜻한말 #마음챙김 #힐링 #글귀 #위로글귀 #좋은글귀 #감성글귀 #힘이되는말 #알아줌 #arajum_saju")
 
 
+def main_bonus(a):
+    """보너스 릴스: 계절 자연 사진 + 위로·용기 문구·명언 (comfort/YYYY-MM-DD-b/, 저녁 21:30 게시용)"""
+    lines = json.load(open(os.path.join(HERE, "bonus_lines.json"), encoding="utf-8"))
+    used_path = os.path.join(a.out, "used.json")
+    used = json.load(open(used_path)) if os.path.exists(used_path) else {"photos": [], "lines": []}
+    used.setdefault("bonus_lines", [])
+    for ds in [x.strip() for x in a.bonus.split(",") if x.strip()]:
+        d = dt.date.fromisoformat(ds)
+        od = os.path.join(a.out, d.isoformat() + "-b")
+        if os.path.exists(os.path.join(od, "meta.json")):
+            continue
+        os.makedirs(od, exist_ok=True)
+        pool = [k for k in range(len(lines)) if k not in used["bonus_lines"]] or list(range(len(lines)))
+        li = pool[d.toordinal() % len(pool)]
+        entry = lines[li]
+        groups = [g.split("|") for g in entry["g"]]
+        bg, meta = get_background(d, od, set(used["photos"]), a.no_net, seed=d.toordinal() + 7, queries=season_queries(d))
+        color, vrgb = style_for(bg)
+        make_reel(bg, groups, color, vrgb, od, seed=d.toordinal() + 7)
+        open(os.path.join(od, "caption.txt"), "w", encoding="utf-8").write(caption(entry, "reel"))
+        json.dump({"date": d.isoformat(), "type": "reel", "bonus": True, "files": ["reel.mp4"], "line_set": li, "post_time": "21:30", "background": meta},
+                  open(os.path.join(od, "meta.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        used["bonus_lines"].append(li)
+        if meta.get("id"):
+            used["photos"].append(meta["id"])
+        print(d, "bonus reel", meta.get("source"), meta.get("query"))
+    json.dump(used, open(used_path, "w"))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--start"); ap.add_argument("--days", type=int, default=7)
     ap.add_argument("--out", default=os.path.join(os.path.dirname(HERE), "comfort"))
     ap.add_argument("--no-net", action="store_true"); ap.add_argument("--force-type")
+    ap.add_argument("--bonus", help="쉼표로 구분한 날짜들(YYYY-MM-DD): 저녁 보너스 릴스 생성")
     a = ap.parse_args()
+    if a.bonus:
+        return main_bonus(a)
     kst = dt.timezone(dt.timedelta(hours=9))
     start = dt.date.fromisoformat(a.start) if a.start else (dt.datetime.now(kst).date() + dt.timedelta(days=1))
     lines = json.load(open(os.path.join(HERE, "comfort_lines.json"), encoding="utf-8"))

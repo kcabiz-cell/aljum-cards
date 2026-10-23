@@ -12,6 +12,9 @@ on:
         description: "만들 일수"
         required: false
         default: "7"
+      bonus:
+        description: "보너스 릴스 날짜들 (쉼표 구분, 예: 2026-10-25,2026-10-28). 입력하면 이 날짜만 생성"
+        required: false
 
 permissions:
   contents: write
@@ -33,6 +36,10 @@ jobs:
         env:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY || vars.PIXABAY_API_KEY }}
         run: |
+          if [ -n "${{ github.event.inputs.bonus }}" ]; then
+            python3 tools/comfort_assets.py --bonus "${{ github.event.inputs.bonus }}"
+            exit 0
+          fi
           ARGS=""
           if [ -n "${{ github.event.inputs.start }}" ]; then ARGS="$ARGS --start ${{ github.event.inputs.start }}"; fi
           ARGS="$ARGS --days ${{ github.event.inputs.days || '7' }}"
