@@ -39,7 +39,7 @@ POSTS = [
   cards=[
    dict(h="2026 season recap", lines=["Finished 7th: 64 wins, 77 losses, 3 ties (144 games).", "Missed the postseason.", "Fall training began Oct 19 at Sajik Stadium."]),
    dict(h="What's next", lines=["Japan (Miyazaki) camp reported to start Nov 4.", "2027 schedule: not announced yet.", "(The 2026 schedule was released in Dec 2025.)"]),
-   dict(h="Catching a game at Sajik", route=True, lines=["Sajik Baseball Stadium, Dongnae-gu (24,500 seats)", "Busan Subway Line 3 — Sajik area", "Check the exact exit on Naver Map.", "Tickets go on sale ~1 week before a game.", "Book on the team site, Ticketlink Global or NOL World."]),
+   dict(h="Catching a game at Sajik", route=True, nonum=True, lines=["Sajik Baseball Stadium, Dongnae-gu (24,500 seats)", "Busan Subway Line 3 — Sajik area", "Check the exact exit on Naver Map.", "Tickets go on sale ~1 week before a game.", "Book on the team site, Ticketlink Global or NOL World."]),
    dict(h="Game-day vibe", lines=["Each player has his own cheer song.", "Stand up and sing along in the cheering sections.", "Hear \"Busan Galmaegi\" (부산 갈매기), the Giants' signature song."]),
   ],
   en="Lotte Giants finished 7th in 2026 (64-77-3) and missed the postseason. The 2027 schedule isn't out yet, but here's how to plan a visit to Sajik Stadium ⚾",
@@ -92,7 +92,7 @@ POSTS = [
   cards=[
    dict(h="T-money card", lines=["Foreign-issued cards don't work at subway gates.", "Buy a T-money card at GS25, CU or 7-Eleven (3,000–5,000 won).", "Recharge at subway-station machines (max 500,000 won)."]),
    dict(h="Transfer discount", lines=["In Busan, T-money works for bus-subway transfers.", "Up to 2 transfers within 30 minutes get the discount.", "Airport limousine buses don't get it."]),
-   dict(h="Gimhae Airport → city", route=True, lines=["Airport → Busan–Gimhae Light Rail → Sasang Stn → Line 2", "Seomyeon ~30 min", "Gwangalli ~50 min", "Haeundae ~70 min", "Airport limousine: buy a ticket first (no cash/transit card on board)"]),
+   dict(h="Gimhae Airport → city", route=True, nonum=True, lines=["Airport → Busan–Gimhae Light Rail → Sasang Stn → Line 2", "Seomyeon ~30 min", "Gwangalli ~50 min", "Haeundae ~70 min", "Airport limousine: buy a ticket first (no cash/transit card on board)"]),
    dict(h="Taxi app for visitors", lines=["Foreign cards often fail on Kakao T.", "Try k.ride, made for visitors, and register your overseas card."]),
   ],
   en="Busan Survival Kit #2: T-money, transfer discounts, the light-rail + Line 2 route from Gimhae Airport, and a taxi app for visitors 🚇",

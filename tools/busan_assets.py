@@ -84,7 +84,7 @@ def make_card(photo, card, n, total):
     y += 36
     for i, ln in enumerate(card["lines"]):
         size = 48
-        pre = f"{i + 1}.  " if card.get("route") and len(card["lines"]) > 2 and i < len(card["lines"]) - 1 else "•  "
+        pre = f"{i + 1}.  " if card.get("route") and not card.get("nonum") and len(card["lines"]) > 2 and i < len(card["lines"]) - 1 else "•  "
         f = font(False, size); lines = wrap(d, ln, f, W - 120 - 80)
         d.text((60, y), pre.strip(), font=font(True, size), fill=accent)
         for l in lines:

@@ -176,6 +176,7 @@
    {
     "h": "Catching a game at Sajik",
     "route": true,
+    "nonum": true,
     "lines": [
      "Sajik Baseball Stadium, Dongnae-gu (24,500 seats)",
      "Busan Subway Line 3 — Sajik area",
@@ -427,6 +428,7 @@
    {
     "h": "Gimhae Airport → city",
     "route": true,
+    "nonum": true,
     "lines": [
      "Airport → Busan–Gimhae Light Rail → Sasang Stn → Line 2",
      "Seomyeon ~30 min",
