@@ -1,0 +1,18 @@
+{
+ "date": "2026-10-28",
+ "type": "reel",
+ "bonus": true,
+ "files": [
+  "reel.mp4"
+ ],
+ "line_set": 2,
+ "post_time": "21:30",
+ "background": {
+  "id": 6706182,
+  "page": "https://pixabay.com/photos/alps-mountains-fog-clouds-nature-6706182/",
+  "user": "chriszwettler",
+  "query": "misty mountain morning sunlight",
+  "lum": 140,
+  "source": "pixabay"
+ }
+}

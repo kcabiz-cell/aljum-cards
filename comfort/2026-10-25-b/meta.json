@@ -1,0 +1,18 @@
+{
+ "date": "2026-10-25",
+ "type": "reel",
+ "bonus": true,
+ "files": [
+  "reel.mp4"
+ ],
+ "line_set": 6,
+ "post_time": "21:30",
+ "background": {
+  "id": 4604763,
+  "page": "https://pixabay.com/photos/autumn-leaves-multicoloured-coloured-4604763/",
+  "user": "fietzfotos",
+  "query": "autumn forest golden leaves",
+  "lum": 134,
+  "source": "pixabay"
+ }
+}
