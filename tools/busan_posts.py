@@ -98,6 +98,17 @@ POSTS = [
   en="Busan Survival Kit #2: T-money, transfer discounts, the light-rail + Line 2 route from Gimhae Airport, and a taxi app for visitors 🚇",
   kr="부산 여행 필수 팁 #2예요. 티머니 카드, 환승 할인, 김해공항에서 경전철+2호선으로 시내 가는 길, 외국인용 택시 앱 k.ride까지 정리했어요 🚇",
   tags="#BusanTravel #Busan #Tmoney #부산여행 #GimhaeAirport #김해공항 #KoreaTravel #TravelTips #wow_pusan"),
+ dict(slug="10-taejongdae", date="2026-11-15", time="20:30", q=["taejongdae", "busan cliff coast", "busan lighthouse"],
+  cover=dict(t="Taejongdae Park", k="태종대", s="Busan's cliffs, forest & sea"),
+  cards=[
+   dict(h="What to expect", lines=["A National Geopark coast with sea caves and rock formations.", "Forested walking paths.", "Park entry is free."]),
+   dict(h="Hours", lines=["Park: 04:00–24:00 (Mar–Oct), 05:00–24:00 (Nov–Feb).", "Facilities close at 20:00.", "Go in daylight for the best views."]),
+   dict(h="Danubi tour train", lines=["Reaches Taejongdae Observatory & Yeongdo Coastal Culture Space.", "Adult 4,000 won round trip (2,000 won one way).", "Teen 2,000 won, child 1,500 won.", "The train is listed as closed on Mondays."]),
+   dict(h="Getting there", route=True, nonum=True, lines=["City buses such as 30 and 8 serve Taejongdae.", "Check the starting stop on Naver Map.", "24 Jeonmang-ro, Yeongdo-gu", "부산 영도구 전망로 24", "Bus numbers can change — check Naver Map."]),
+  ],
+  en="Taejongdae is a cliffed coast and forest park at the southern tip of Yeongdo. Entry is free, the Danubi tour train is paid, and the train is closed on Mondays. Swipe for hours and fares 🌊",
+  kr="태종대는 영도 남쪽 끝의 절벽 해안 공원이에요. 입장은 무료이고, 다누비 순환열차는 유료이며 월요일은 운행하지 않는다고 안내돼 있어요. 운영 시간과 요금을 넘겨서 확인해 보세요 🌊",
+  tags="#Taejongdae #태종대 #Busan #부산여행 #BusanTravel #부산명소 #Yeongdo #영도 #KoreaTravel #wow_pusan"),
 ]
 json.dump(POSTS, open("tools/busan_posts.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 json.dump({"foot": FOOT}, open("tools/busan_misc.json", "w"))
