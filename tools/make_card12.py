@@ -21,7 +21,10 @@ def render(d):
         c = by[an]; col = c["color"]
         x = x0 + (i % 2) * cw; y = y0 + (i // 2) * (ch + 8)
         dr.rounded_rectangle((x, y, x + cw - 12, y + ch - 6), 26, fill=tint(col, 0.88))
-        ic = Image.open(os.path.join(HERE, "animals", f"{an}.png")); ic.thumbnail((112, 112), Image.LANCZOS)
+        sd = os.path.join(HERE, "animals", d.get("animal_set", ""))
+        ip = os.path.join(sd, f"{an}.png")
+        if not os.path.exists(ip): ip = os.path.join(HERE, "animals", f"{an}.png")
+        ic = Image.open(ip); ic.thumbnail((112, 112), Image.LANCZOS)
         img.paste(ic, (x + 16 + (112 - ic.width) // 2, y + (ch - 6 - ic.height) // 2), ic)
         dr.text((x + 148, y + 26), f"{an}띠", font=load_font("Black", 38), fill=INK)
         f = load_font("Medium", 27); t = c["line"]

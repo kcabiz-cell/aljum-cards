@@ -181,8 +181,11 @@ def build12(dt):
                "재미로 보는 운세예요. 선택과 판단은 언제나 나의 몫이에요.\n\n"
                "💌 오늘 내 띠가 마음에 들었다면 저장해 두고, 같은 띠 친구에게 보내 주세요.\n"
                "🤍 팔로우하면 매일 아침 따뜻한 한마디를 받아볼 수 있어요.\n\n" + tags)
+    st = date(2026, 10, 21) + __import__("datetime").timedelta(days=3 * ((dt - date(2026, 10, 21)).days // 3))
+    sn = (54 + (st - date(2000, 1, 1)).days) % 60
+    animal_set = {"木": "wood", "火": "fire", "土": "earth", "金": "metal", "水": "water"}[S_EL[sn % 10]]
     return dict(date=dt.isoformat(), date_label=f"{dt.year}.{dt.month:02d}.{dt.day:02d} ({wd})",
-                ilgin=ilgin, ilgin_ko=ilgin_ko, items=items, brand="알아줌", caption=caption)
+                ilgin=ilgin, ilgin_ko=ilgin_ko, animal_set=animal_set, items=items, brand="알아줌", caption=caption)
 
 
 if __name__ == "__main__":

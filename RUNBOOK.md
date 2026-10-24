@@ -15,7 +15,7 @@
 1. Buffer `list_posts`(status=scheduled)로 마지막 예약일 확인(아침/저녁 각각). 예약 총합 10건 이하로, 부족한 날부터 채운다.
 2. `git pull` 후 필요한 날짜의 `comfort/DATE/meta.json` 확인. 없으면 `gh api -X POST repos/kcabiz-cell/aljum-cards/actions/workflows/comfort-assets.yml/dispatches -f ref=main -f 'inputs[start]=YYYY-MM-DD' -f 'inputs[days]=7'` 실행, `gh api repos/kcabiz-cell/aljum-cards/actions/runs?per_page=1`로 success까지 대기 후 pull.
 3. 아침 12띠 카드: `python3 -I tools/gen_content.py DATE`(content12_DATE.json 생성) → `python3 -I tools/make_card12.py tools/content12_DATE.json cards/DATE/all12.png` → 커밋·푸시 → raw URL 200 확인 → `create_post`(text=content12_DATE.json의 caption, assets=[{image:{url:raw .../cards/DATE/all12.png}}], instagram {type:"post", shouldShareToFeed:true}, dueAt DATE 07:30+09:00).
-   (동물 그림은 tools/animals/*.png, 투명 배경. 칸 문구는 gen_content.py의 SHORT 풀에서 일진과 띠 관계로 고른다. 문구는 모두 해요체 행동 제안.)
+   (동물 그림은 오행별 5벌 tools/animals/{wood,fire,earth,metal,water}/*.png(투명 배경)이고 기본 그림은 tools/animals/*.png. 3일 단위로 그 구간 첫날 일진 천간의 오행 세트를 쓴다(gen_content.py가 content12의 animal_set에 기록, 기준일 2026-10-21). earth·metal·water는 해상도가 낮은 임시본이라 원본이 오면 교체. 칸 문구는 gen_content.py의 SHORT 풀에서 일진과 띠 관계로 고른다. 문구는 모두 해요체 행동 제안.)
 4. 저녁 일요일 이미지: `create_post` text=caption.txt, assets=[{image:{url:raw .../comfort/DATE/01.jpg}}], instagram {type:"post", shouldShareToFeed:true}, dueAt DATE 21:30+09:00.
 5. 저녁 월·수·금·토 릴스: text=caption.txt, assets=[{video:{url:raw .../comfort/DATE/reel.mp4}}], instagram {type:"reel", shouldShareToFeed:true}, dueAt DATE 21:30+09:00.
 6. 업로드 전에 사진 한두 장 확인(사람 얼굴·로고·어두움이면 해당 폴더 삭제 후 재생성).
