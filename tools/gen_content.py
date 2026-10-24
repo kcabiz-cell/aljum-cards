@@ -183,7 +183,9 @@ def build12(dt):
                "🤍 팔로우하면 매일 아침 따뜻한 한마디를 받아볼 수 있어요.\n\n" + tags)
     st = date(2026, 10, 21) + __import__("datetime").timedelta(days=3 * ((dt - date(2026, 10, 21)).days // 3))
     sn = (54 + (st - date(2000, 1, 1)).days) % 60
-    animal_set = {"木": "wood", "火": "fire", "土": "earth", "金": "metal", "水": "water"}[S_EL[sn % 10]]
+    # 3일 단위 테마 세트: 구간 첫날 일진의 천간(갑~계)에 하나씩 대응(10일 순환=30일 주기)
+    SETS = ["explorer", "garden", "fire", "sports_a", "earth", "wood", "sports_b", "metal", "water", "school"]
+    animal_set = SETS[sn % 10]
     return dict(date=dt.isoformat(), date_label=f"{dt.year}.{dt.month:02d}.{dt.day:02d} ({wd})",
                 ilgin=ilgin, ilgin_ko=ilgin_ko, animal_set=animal_set, items=items, brand="알아줌", caption=caption)
 
