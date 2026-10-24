@@ -1,4 +1,4 @@
-# 알아줌 인스타 자동 게시 런북 (매주 화요일 21시 실행)
+# 알아줌 인스타 자동 게시 런북 (매주 화요일 21시 실행 + 매일 점검에서 큐 보충)
 
 목표: 위로·보듬음·다독임의 따뜻한 한마디 계정. Buffer(arajum_saju, 채널 ID 6ad8b0df778b240e2f7a3254, 조직 ID 6ad8b005fa2ac3e803d63a8d)에 다음 7일치 카드뉴스를 예약한다.
 무료 플랜 한도: 예약 10건 이하. 게시 시각은 한국시간 매일 07:30 (dueAt 예: 2026-10-29T07:30:00+09:00, schedulingType=automatic, mode=customScheduled).
@@ -8,18 +8,19 @@
 팔로워 댓글에 답할 때도 늘 감사·공감·응원의 말투(존댓말)로, 부정적 예언이나 단정은 하지 않는다.
 이미지 경로는 갱신 시 캐시를 피하려면 cards/YYYY-MM-DD/v2/ 처럼 새 폴더에 올린다.
 
-## 절차 (주 7회 구성)
-요일별 종류: 화·목=띠별 카드(8장 캐러셀) / 월·수·금·토=위로 릴스(영상, 음악 포함) / 일=위로 한마디 이미지 1장. (릴스 주 4회는 도달 확대 목적)
-위로 이미지·릴스는 GitHub Actions(`comfort-assets`, 매주 화요일 20:00 KST 자동 실행)가 Pixabay 밝은 자연·바다 사진 + 문구 + 직접 합성한 음악으로 `comfort/YYYY-MM-DD/`에 만들어 둔다. 각 폴더에 `01.jpg` 또는 `reel.mp4`, `caption.txt`, `meta.json`(post_time 포함)이 있다.
-1. Buffer `list_posts`(status=scheduled)로 마지막 예약일 확인. 시작일 = 마지막 예약일 +1. 예약 총합이 10건을 넘지 않게 최대 7일치만 추가.
-2. `git pull`로 최신을 받고, 필요한 날짜의 `comfort/DATE/meta.json`이 있는지 확인. 없으면 `gh api -X POST repos/kcabiz-cell/aljum-cards/actions/workflows/comfort-assets.yml/dispatches -f ref=main -f 'inputs[start]=YYYY-MM-DD' -f 'inputs[days]=7'`로 실행하고 `gh api repos/kcabiz-cell/aljum-cards/actions/runs?per_page=1`로 완료(success)까지 기다린 뒤 다시 pull. (같은 날짜 폴더가 이미 있으면 건너뛴다. 다시 만들려면 폴더를 지우고 push 후 실행)
-3. 화·목(띠별 카드): 기존 방식. `python3 -I tools/gen_content.py DATE` → 문구 검토 → `python3 -I tools/make_cards.py tools/content_DATE.json` → `cards/DATE/01~08.png` 복사 → 커밋·푸시 → raw URL 200 확인 → `create_post`(text=caption, image 8개, instagram {type:"post", shouldShareToFeed:true}, 07:30).
-4. 일요일 이미지: `create_post` text=`comfort/DATE/caption.txt`, assets=[{image:{url:raw .../comfort/DATE/01.jpg}}], instagram {type:"post", shouldShareToFeed:true}, dueAt = DATE + meta.json의 post_time(+09:00, 07:30 또는 21:30).
-5. 월·수·금·토 릴스: text=caption.txt, assets=[{video:{url:raw .../comfort/DATE/reel.mp4}}], instagram {type:"reel", shouldShareToFeed:true}, dueAt은 위와 같음.
-6. 업로드 전에 사진 한두 장은 확인한다. 사람 얼굴·로고가 보이거나 어둡고 칙칙하면 그 날짜 폴더를 지우고 다시 만든다. (`meta.json`의 background에 Pixabay 작성자와 페이지가 기록됨. `fallback_reason`이 있으면 Pixabay 호출 실패로 자체 생성 배경이 쓰인 것)
+## 절차 (매일 2회 구성: 아침 12띠 카드 + 저녁 위로 게시물)
+- 매일 07:30 = **12띠 한 장 카드**(이미지 1장, 모든 요일). 2026-10-24 사용자 결정: "글씨가 작아도 12띠 운세를 매일 한 번에".
+- 매일 21:30 = 위로 릴스(월·수·금·토) / 위로 이미지(일). 화·목 저녁은 없음(예약 한도 때문). 위로 문구 중 아침용(t=am)은 쓰지 않는다. 모든 위로 게시물 post_time은 21:30.
+위로 이미지·릴스는 GitHub Actions(`comfort-assets`, 매주 화요일 20:00 KST)가 `comfort/YYYY-MM-DD/`에 만든다(`01.jpg` 또는 `reel.mp4`, `caption.txt`, `meta.json`).
+1. Buffer `list_posts`(status=scheduled)로 마지막 예약일 확인(아침/저녁 각각). 예약 총합 10건 이하로, 부족한 날부터 채운다.
+2. `git pull` 후 필요한 날짜의 `comfort/DATE/meta.json` 확인. 없으면 `gh api -X POST repos/kcabiz-cell/aljum-cards/actions/workflows/comfort-assets.yml/dispatches -f ref=main -f 'inputs[start]=YYYY-MM-DD' -f 'inputs[days]=7'` 실행, `gh api repos/kcabiz-cell/aljum-cards/actions/runs?per_page=1`로 success까지 대기 후 pull.
+3. 아침 12띠 카드: `python3 -I tools/gen_content.py DATE`(content12_DATE.json 생성) → `python3 -I tools/make_card12.py tools/content12_DATE.json cards/DATE/all12.png` → 커밋·푸시 → raw URL 200 확인 → `create_post`(text=content12_DATE.json의 caption, assets=[{image:{url:raw .../cards/DATE/all12.png}}], instagram {type:"post", shouldShareToFeed:true}, dueAt DATE 07:30+09:00).
+   (동물 그림은 tools/animals/*.png, 투명 배경. 칸 문구는 gen_content.py의 SHORT 풀에서 일진과 띠 관계로 고른다. 문구는 모두 해요체 행동 제안.)
+4. 저녁 일요일 이미지: `create_post` text=caption.txt, assets=[{image:{url:raw .../comfort/DATE/01.jpg}}], instagram {type:"post", shouldShareToFeed:true}, dueAt DATE 21:30+09:00.
+5. 저녁 월·수·금·토 릴스: text=caption.txt, assets=[{video:{url:raw .../comfort/DATE/reel.mp4}}], instagram {type:"reel", shouldShareToFeed:true}, dueAt DATE 21:30+09:00.
+6. 업로드 전에 사진 한두 장 확인(사람 얼굴·로고·어두움이면 해당 폴더 삭제 후 재생성).
 7. `list_posts`로 정상 예약 확인 후 사용자에게 한국어 존댓말로 짧게 보고.
-8. 캡션에는 저장·공유·팔로우 안내 한 줄과 검색용 해시태그가 이미 들어 있다(gen_content.py, comfort_assets.py). 그대로 쓴다.
-9. 문구 규칙은 위 톤 원칙과 동일. `comfort_lines.json`에서 요일·시간대에 안 맞는 문구가 나오면(d: mon/we, t: am/pm 태그) 태그를 고친다.
+8. 옛 8장 캐러셀(make_cards.py, 띠 6개씩 격일)은 더 쓰지 않는다(파일은 보존).
 
 ## 보너스 릴스 (저녁 21:30, 예약 여유 건수만큼만)
 - 계절 자연 사진(Pixabay) + 위로·용기 문구·명언(`tools/bonus_lines.json`)으로 `comfort/YYYY-MM-DD-b/`에 생성. 실행: Actions `comfort-assets`의 `bonus` 입력에 날짜(쉼표 구분) 입력.
@@ -31,4 +32,4 @@
 - 배경 규칙: 밝은 자연·바다·하늘·꽃 (`QUERIES`), 너무 어두운 사진은 자동 제외. 음악은 직접 합성(저작권 없음).
 - 이미지는 반드시 공개 저장소 raw URL이어야 한다.
 - Buffer 연결: claude.ai 커넥터(OAuth). 연결이 없으면 중단하고 사용자에게 재연결을 요청한다.
-- 디자인은 1번 시안(v1, 플랫 색 구분)으로 확정. make_cards.py를 바꾸지 말 것.
+- 12띠 카드 디자인: tools/make_card12.py (make_cards.py의 폰트·색 함수를 가져다 쓰므로 make_cards.py는 바꾸지 말 것).

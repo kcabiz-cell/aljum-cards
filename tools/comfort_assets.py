@@ -301,6 +301,7 @@ def main():
         os.makedirs(od, exist_ok=True)
         def fits(k):
             e = lines[k]; wd = d.weekday()
+            if e.get("t") == "am": return False  # 위로 게시물은 저녁 21:30 고정(아침 07:30은 12띠 카드)
             if e.get("d") == "mon" and wd != 0: return False
             if e.get("d") == "we" and wd not in (5, 6): return False
             return True
@@ -319,7 +320,7 @@ def main():
         else:
             make_image(bg, groups, color, vrgb, od); files = ["01.jpg"]
         open(os.path.join(od, "caption.txt"), "w", encoding="utf-8").write(caption(entry, kind))
-        json.dump({"date": d.isoformat(), "type": kind, "files": files, "line_set": li, "post_time": "21:30" if entry.get("t") == "pm" else "07:30", "background": meta},
+        json.dump({"date": d.isoformat(), "type": kind, "files": files, "line_set": li, "post_time": "21:30", "background": meta},
                   open(os.path.join(od, "meta.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         used["lines"].append(li)
         if meta.get("id"):

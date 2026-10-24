@@ -145,10 +145,52 @@ def build(dt):
                 brand="알아줌", caption=caption, first_comment=first_comment)
 
 
+SHORT = {
+    "삼합": ["가벼운 인사를 건네 보세요", "부탁 한마디로 시작해 봐요", "안부를 먼저 물어 보세요"],
+    "육합": ["천천히 마음을 전해 보세요", "따뜻한 한 끼를 챙겨 보세요", "끝까지 들어 주면 충분해요"],
+    "동일": ["나를 먼저 챙겨 보세요", "내 속도로 가도 괜찮아요", "세 줄만 적어 봐요"],
+    "충": ["일정에 여유를 한 칸 넣어요", "다른 길로 가 봐요", "계획 B 한 줄이면 든든해요"],
+    "해": ["따뜻한 한마디를 더해요", "나에게 안부를 물어요", "내 마음도 함께 전해요"],
+    "파": ["한 곳만 다듬어 봐요", "첫 줄만 써 봐요", "하나쯤 미뤄도 괜찮아요"],
+    "무난": ["좋아하는 노래를 틀어 봐요", "따뜻한 차 한 잔 어때요?", "창문을 활짝 열어 봐요",
+           "고마운 사람을 떠올려요", "하나만 끝내 봐요", "작은 선물을 나에게 줘요"],
+}
+
+
+def build12(dt):
+    """12띠 한 장 카드용: 매일 12띠 전부, 칸마다 짧은 한 줄."""
+    n = (54 + (dt - date(2000, 1, 1)).days) % 60
+    s, b = n % 10, n % 12
+    ordn = dt.toordinal()
+    wd = "월화수목금토일"[dt.weekday()]
+    ilgin = S[s] + B[b]; ilgin_ko = KS[s] + KB[b] + "일"
+    items, cnt = [], {}
+    for i in range(12):
+        r = relation(b, i)
+        k = cnt.get(r, 0); cnt[r] = k + 1
+        pool = SHORT[r]
+        items.append(dict(animal=ANI[i], color=COLOR[i], line=pool[(ordn + k) % len(pool)]))
+    se, be = S_EL[s], B_EL[b]
+    head = (f"🔮 오늘의 띠별 운세 ({dt.month}/{dt.day} {wd} · {ilgin_ko})\n"
+            f"오늘은 {ilgin_ko}({ilgin})이에요. {KS[s]}({EL_KO[se]}) 기운 위에 {KB[b]}({EL_KO[be]}) 기운이 얹힌 날이에요. "
+            f"{EL_MOOD[se]} 기운이 흐르는 날이에요.\n\n")
+    body = "\n".join(f"· {c['animal']}띠: {c['line']}" for c in items)
+    tags = ("#오늘의운세 #띠별운세 #오늘의띠별운세 " + " ".join(f"#{a}띠운세" for a in ANI) +
+            " #사주 #일일운세 #알아줌 #운세 #힐링")
+    caption = (head + body + "\n\n사주는 정해진 답이 아니라 하루를 가볍게 돌아보는 작은 힌트예요.\n"
+               "재미로 보는 운세예요. 선택과 판단은 언제나 나의 몫이에요.\n\n"
+               "💌 오늘 내 띠가 마음에 들었다면 저장해 두고, 같은 띠 친구에게 보내 주세요.\n"
+               "🤍 팔로우하면 매일 아침 따뜻한 한마디를 받아볼 수 있어요.\n\n" + tags)
+    return dict(date=dt.isoformat(), date_label=f"{dt.year}.{dt.month:02d}.{dt.day:02d} ({wd})",
+                ilgin=ilgin, ilgin_ko=ilgin_ko, items=items, brand="알아줌", caption=caption)
+
+
 if __name__ == "__main__":
     here = os.path.dirname(os.path.abspath(__file__))
     for a in sys.argv[1:]:
         dt = date.fromisoformat(a)
         p = os.path.join(here, f"content_{a}.json")
         json.dump(build(dt), open(p, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
-        print("wrote", p)
+        p12 = os.path.join(here, f"content12_{a}.json")
+        json.dump(build12(dt), open(p12, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+        print("wrote", p, p12)
