@@ -505,5 +505,141 @@
   "en": "Taejongdae is a cliffed coast and forest park at the southern tip of Yeongdo. Entry is free, the Danubi tour train is paid, and the train is closed on Mondays. Swipe for hours and fares 🌊",
   "kr": "태종대는 영도 남쪽 끝의 절벽 해안 공원이에요. 입장은 무료이고, 다누비 순환열차는 유료이며 월요일은 운행하지 않는다고 안내돼 있어요. 운영 시간과 요금을 넘겨서 확인해 보세요 🌊",
   "tags": "#Taejongdae #태종대 #Busan #부산여행 #BusanTravel #부산명소 #Yeongdo #영도 #KoreaTravel #wow_pusan"
+ },
+ {
+  "slug": "11-pork-soup",
+  "date": "2026-11-18",
+  "time": "19:30",
+  "q": [
+   "korean pork soup",
+   "korean soup rice bowl",
+   "korean food stew"
+  ],
+  "cover": {
+   "t": "Dwaeji-gukbap",
+   "k": "돼지국밥",
+   "s": "Busan's pork & rice soup"
+  },
+  "cards": [
+   {
+    "h": "What is it?",
+    "lines": [
+     "A hearty pork soup with rice served in it.",
+     "Traditionally a milky-white, rich broth.",
+     "Often served in a heavy earthenware bowl, straight from the fire."
+    ]
+   },
+   {
+    "h": "A bowl with history",
+    "lines": [
+     "Busan's official guide says it was born from the hardship of wartime.",
+     "It is seen as a symbol of modern Korean history and refugees' lives."
+    ]
+   },
+   {
+    "h": "Good to know",
+    "lines": [
+     "Look for \"돼지국밥\" on signs and menus.",
+     "Restaurants vary: some soups are served ready to eat, some come with side seasonings.",
+     "Prices & hours differ by shop — check Naver Map before you go."
+    ]
+   }
+  ],
+  "en": "Dwaeji-gukbap is Busan's pork and rice soup. Busan's official guide describes a milky broth with rice served in the soup, and a history that goes back to wartime hardship. Swipe for the basics 🍲",
+  "kr": "돼지국밥은 부산을 대표하는 국밥이에요. 부산시 공식 안내에 따르면 뽀얀 국물에 밥을 말아 내고, 전쟁 시기의 어려움 속에서 태어난 음식이라고 해요. 기본 정보를 넘겨서 확인해 보세요 🍲",
+  "tags": "#DwaejiGukbap #돼지국밥 #BusanFood #부산맛집 #Busan #부산여행 #KoreanFood #BusanTravel #wow_pusan"
+ },
+ {
+  "slug": "12-seomyeon-light",
+  "date": "2026-11-20",
+  "time": "12:30",
+  "q": [
+   "city lights night korea",
+   "winter lights festival",
+   "night street lights"
+  ],
+  "cover": {
+   "t": "Seomyeon Light Festival",
+   "k": "서면 빛축제",
+   "s": "Winter lights in downtown Busan"
+  },
+  "cards": [
+   {
+    "h": "Quick facts",
+    "lines": [
+     "Seomyeon Light Festival 2026",
+     "Oct 29, 2026 – Feb 14, 2027",
+     "Location: around Seomyeon 1st Street (서면1번가)",
+     "Listed on the Busan city official events page."
+    ]
+   },
+   {
+    "h": "Getting there",
+    "route": true,
+    "nonum": true,
+    "lines": [
+     "Subway Lines 1 & 2 → Seomyeon Station",
+     "Check the best exit on Naver Map.",
+     "Show times and admission: check the official notice."
+    ]
+   },
+   {
+    "h": "Plan your night",
+    "lines": [
+     "Seomyeon is Busan's busy downtown district.",
+     "Pair the lights with dinner nearby.",
+     "Dates can change — re-check official sources before you go."
+    ]
+   }
+  ],
+  "en": "The Seomyeon Light Festival runs from Oct 29, 2026 to Feb 14, 2027 around Seomyeon 1st Street, per Busan's official events page. Seomyeon Station (Lines 1 & 2) is the easy way in ✨",
+  "kr": "서면 빛축제는 2026년 10월 29일부터 2027년 2월 14일까지 서면1번가 일대에서 열려요(부산시 공식 행사 안내 기준). 지하철 1·2호선 서면역에서 가요 ✨",
+  "tags": "#SeomyeonLightFestival #서면빛축제 #Seomyeon #서면 #Busan #부산여행 #BusanNight #BusanTravel #wow_pusan"
+ },
+ {
+  "slug": "13-haeundae-light",
+  "date": "2026-11-22",
+  "time": "20:30",
+  "q": [
+   "haeundae beach night",
+   "haeundae busan",
+   "beach winter night lights"
+  ],
+  "cover": {
+   "t": "Haeundae Light Festival",
+   "k": "해운대 빛축제",
+   "s": "Lights open Nov 28"
+  },
+  "cards": [
+   {
+    "h": "Quick facts",
+    "lines": [
+     "The 13th Haeundae Light Festival",
+     "Lighting ceremony Nov 28, 2026; runs to Jan 10, 2027",
+     "Theme: \"Deep Dive Haeundae\" (sea & deep-sea)",
+     "Hosted by Haeundae-gu"
+    ]
+   },
+   {
+    "h": "Where",
+    "lines": [
+     "From Gunam-ro (Haeundae Square) to the sand of Haeundae Beach.",
+     "Light sculptures and media art along the route."
+    ]
+   },
+   {
+    "h": "Getting there",
+    "route": true,
+    "nonum": true,
+    "lines": [
+     "Subway Line 2 → Haeundae Station",
+     "Check the best exit on Naver Map.",
+     "Nightly lighting times and admission: check the official notice."
+    ]
+   }
+  ],
+  "en": "Haeundae Light Festival returns: lighting ceremony Nov 28, 2026, running to Jan 10, 2027, from Gunam-ro to the beach. Theme: Deep Dive Haeundae. Reported by Financial News on Nov 6 — check official notices for times ✨",
+  "kr": "제13회 해운대 빛 축제가 2026년 11월 28일 점등식으로 시작해 2027년 1월 10일까지 이어져요. 구남로에서 해운대해수욕장 백사장까지, 테마는 '딥 다이브 해운대'예요. 점등 시간은 공식 안내를 확인하세요 ✨",
+  "tags": "#HaeundaeLightFestival #해운대빛축제 #Haeundae #해운대 #Busan #부산여행 #BusanNight #BusanTravel #wow_pusan"
  }
 ]
