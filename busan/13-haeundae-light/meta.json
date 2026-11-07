@@ -1,0 +1,23 @@
+{
+ "slug": "13-haeundae-light",
+ "date": "2026-11-22",
+ "time": "20:30",
+ "images": 5,
+ "photos": [
+  {
+   "id": 4385761,
+   "user": "CaturalMITA",
+   "page": "https://pixabay.com/photos/ocean-busan-haeundae-beach-4385761/"
+  },
+  {
+   "id": 7531101,
+   "user": "KimJaesub",
+   "page": "https://pixabay.com/photos/beach-coast-fog-buildings-city-7531101/"
+  },
+  {
+   "id": 1000562,
+   "user": "mu4108jin",
+   "page": "https://pixabay.com/photos/haeundae-beach-bathing-beach-busan-1000562/"
+  }
+ ]
+}
