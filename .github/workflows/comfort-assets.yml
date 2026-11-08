@@ -1,8 +1,9 @@
 name: comfort-assets
 
 on:
-  schedule:
-    - cron: "0 11 * * 2"   # 매주 화요일 20:00 KST (Claude 주간 예약 작업 21:07 KST 전에 생성)
+  # [일시 중지 2026-11-08] 주간 자동 생성 중지. 재개하려면 아래 두 줄 앞의 '# '를 지우세요.
+  # schedule:
+  #   - cron: "0 11 * * 2"   # 매주 화요일 20:00 KST
   workflow_dispatch:
     inputs:
       start:
